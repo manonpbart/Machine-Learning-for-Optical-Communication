@@ -15,7 +15,7 @@ Manon P. Bart, Sita Dawanse, Nicholas J. Savino, Viet Tran, Tianhong Wang, Sanja
 ## Table of Contents
 - [Introduction](#introduction)
 - [Usage](#usage)
-- [License](#license)
+
 
 
 ## Introduction
@@ -72,12 +72,18 @@ In summary, this repository lets you:
 
 ## Usage
 
+To use both the beam generator and the denoising machine learning model, you will need to run:
+
+          pip install git+https://github.com/manonpbart/Machine-Learning-for-Optical-Communication.git#subdirectory=beam_project)
+          import beam_simulation as bs
+
 ### Generation of modes:
 
-Information for generating modes can be found with further detail in beam_project/examples/GeneratingBeams.ipynb. Once the beam_simulation package is downloaded, many different optical set ups can be configured using:
+Information for generating modes can be found with further detail in **beam_project/examples/GeneratingBeams.ipynb**, which includes several examples of how to use the beam_simulation package. Once the beam_simulation package is downloaded, many different optical set ups can be configured using:
 
-          import beam_simulation as bs
-          bs.Config(wavelength=795e-9, size_x=400, size_y=400, pixel_size=8e-6,w0=0.35e-3)
+        bs.Config(wavelength=795e-9, size_x=400, size_y=400, pixel_size=8e-6,w0=0.35e-3)
+
+which gives the user the ability to change the wavelength, field-of-view, pixel size, beam waist, and more.
 
 Following this, different beams can be generated using:
 
@@ -107,14 +113,14 @@ Turbulence can be added for varying Cn2 values:
 
 <img width="1176" height="407" alt="08c35939-f62b-4a54-871d-0a546ab90dea" src="https://github.com/user-attachments/assets/acc518cc-9909-4196-b170-b766abb71ff2" />
 
+Beyond just singular modes, this packages allows you to generate data sets containing many different LG, IG, HG modes at different turbulence levels. More information on how to generate these modes is shown below.  
 
 ### Machine Learning:
 
-For machine learning tasks, large data sets must be created. Examples of this process is shown in beam_project/examples/GenerativeModel.ipynb
+For machine learning tasks, large data sets must be created. The data set generation and a full denoising convolutional autoencoder is presented in **beam_project/examples/GenerativeModel.ipynb**
 
 Using the beam simulation package, data sets can be created using 
 
-        import beam_simulation as bs
         from beam_simulation.create_oam_list import GenerateOAM
         gen = GenerateOAM(
             mode_types=["LG"],
@@ -132,7 +138,7 @@ which can generate different pairs of LG, HG, and IG modes as well as change the
 
 <img width="795" height="280" alt="d740a282-dfc4-48dc-ad6f-7441108470b0" src="https://github.com/user-attachments/assets/435cdf41-22da-4477-bfb8-93e268594caa" />
 
-In the GenerativeModel code, there is a sample denoising convolutional autoencoder which reduces the effects of turbulence on input images. This can be called using:
+In the GenerativeModel code, there is a denoising convolutional autoencoder which reduces the effects of turbulence on input images. This can be called using:
 
         autoenc = ConvAutoencoder(
             input_shape=images.shape[1:],
@@ -161,6 +167,5 @@ Outputs of the denoising CAE and the input images are shown here:
 <img width="1414" height="368" alt="c1a020bd-7362-44c8-ac14-f0c1189f5432" src="https://github.com/user-attachments/assets/ad4cb06f-8bdf-48f7-a999-8b67d2991078" />
 
 
-## Liscence
 
 
