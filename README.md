@@ -26,21 +26,21 @@ This project simulates and analyzes higher-order spatial modes of light for use 
 
   <img width="555" height="47" alt="Screenshot 2025-10-01 at 6 07 15 PM" src="https://github.com/user-attachments/assets/f2d5dfe8-0561-44f4-8ac9-d00e1c80f5a2" />
 
- where \(H_n\) are Hermite polynomials, \(\omega(z)\) is beam width, and \(\xi(z)\) is the Gouy phase.
+ where $H_n$ are Hermite polynomials, $\omega(z)$ is beam width, and $\xi(z)$ is the Gouy phase.
 
 - **Laguerre-Gaussian (LG) modes**  
   Defined in cylindrical coordinates with circular symmetry and orbital angular momentum (OAM).
 
     <img width="566" height="55" alt="Screenshot 2025-10-01 at 6 07 38 PM" src="https://github.com/user-attachments/assets/ff785ead-feb8-42bb-bcfd-ddc0bb3ec6ba" />
 
-  where \(L_n^{|\ell|}\) are generalized Laguerre polynomials, \(\ell\) is the azimuthal index (OAM).
+  where $L_n^{|\ell|}$ are generalized Laguerre polynomials, $\ell$ is the azimuthal index (OAM).
 
 - **Ince-Gaussian (IG) modes**  
-  Defined in elliptical coordinates with an ellipticity parameter \(\epsilon\). They interpolate smoothly between HG and LG families.
+  Defined in elliptical coordinates with an ellipticity parameter $\epsilon$. They interpolate smoothly between HG and LG families.
 
    <img width="463" height="57" alt="Screenshot 2025-10-01 at 6 07 56 PM" src="https://github.com/user-attachments/assets/43123eab-cae9-493a-ab9a-b288e59df8f5" />
 
-  where \(\mathcal{C}_{p,m}^{e/o}\) are even/odd Ince polynomials and \(\epsilon\) controls ellipticity.
+  where $\mathcal{C}_{p,m}^{e/o}$ are even/odd Ince polynomials and $\epsilon$ controls ellipticity.
 
 ---
 
@@ -50,13 +50,13 @@ Atmospheric turbulence is simulated using the Kolmogorov/Von Kármán model.
 <img width="251" height="61" alt="Screenshot 2025-10-01 at 6 08 19 PM" src="https://github.com/user-attachments/assets/969eb809-86c2-4722-88bc-ce7cd6be5ecc" />
 
 
-The turbulence strength is quantified by the structure constant \(C_n^2\):  
+The turbulence strength is quantified by the structure constant $C_n^2$:  
 
-- **Weak turbulence**: \(C_n^2 \approx 10^{-17}\,\text{m}^{-2/3}\)  
-- **Moderate turbulence**: \(C_n^2 \approx 10^{-15}\,\text{m}^{-2/3}\)  
-- **Strong turbulence**: \(C_n^2 \approx 10^{-13}\,\text{m}^{-2/3}\) or higher  
+- **Weak turbulence**: $C_n^2 \approx 10^{-17}\,\text{m}^{-2/3}$  
+- **Moderate turbulence**: $C_n^2 \approx 10^{-15}\,\text{m}^{-2/3}$  
+- **Strong turbulence**: $C_n^2 \approx 10^{-13}\,\text{m}^{-2/3}$ or higher  
 
-A smaller inner scale (\(l_0\)) means stronger distortions, while the outer scale (\(L_0\)) sets the largest turbulence features.
+A smaller inner scale $l_0$ means stronger distortions, while the outer scale $L_0$ sets the largest turbulence features.
 
 ---
 
