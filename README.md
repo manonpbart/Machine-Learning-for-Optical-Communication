@@ -15,6 +15,11 @@ Manon P. Bart, Sita Dawanse, Nicholas J. Savino, Viet Tran, Tianhong Wang, Sanja
 ## Table of Contents
 - [Introduction](#introduction)
 - [Usage](#usage)
+  - [Generation of optical spatial modes](#generation-of-optical-spatial-modes)
+  - [Machine Learning](#machine-learning)
+    - [Dataset creation](#dataset-creation)
+    - [Generative convolutional autoencoder](#generative-convolutional-autoencoder)
+    - [Classifying convolutional neural network](#classifying-convolutional-neural-network)
 
 
 
@@ -77,7 +82,7 @@ To use both the beam generator and the denoising machine learning model, you wil
           pip install git+https://github.com/manonpbart/Machine-Learning-for-Optical-Communication.git#subdirectory=beam_project)
           import beam_simulation as bs
 
-### Generation of modes:
+### Generation of optical spatial modes
 
 Information for generating modes can be found with further detail in **beam_project/examples/GeneratingBeams.ipynb**, which includes several examples of how to use the beam_simulation package. Once the beam_simulation package is downloaded, many different optical set ups can be configured using:
 
@@ -115,7 +120,9 @@ Turbulence can be added for varying Cn2 values:
 
 Beyond just singular modes, this packages allows you to generate data sets containing many different LG, IG, HG modes at different turbulence levels. More information on how to generate these modes is shown below.  
 
-### Machine Learning:
+### Machine Learning
+
+#### Dataset creation
 
 For machine learning tasks, large data sets must be created. The data set generation and a full denoising convolutional autoencoder is presented in **beam_project/examples/GenerativeModel.ipynb**
 
@@ -137,6 +144,8 @@ which can generate different pairs of LG, HG, and IG modes as well as change the
         gen.visualize("LG", "p1_l2", Cn2=71.8e-13)
 
 <img width="795" height="280" alt="d740a282-dfc4-48dc-ad6f-7441108470b0" src="https://github.com/user-attachments/assets/435cdf41-22da-4477-bfb8-93e268594caa" />
+
+#### Generative convolutional autoencoder
 
 In the GenerativeModel code, there is a denoising convolutional autoencoder which reduces the effects of turbulence on input images. This can be called using:
 
@@ -166,6 +175,8 @@ Outputs of the denoising CAE and the input images are shown here:
 
 <img width="1414" height="368" alt="c1a020bd-7362-44c8-ac14-f0c1189f5432" src="https://github.com/user-attachments/assets/ad4cb06f-8bdf-48f7-a999-8b67d2991078" />
 
+#### Classifying convolutional neural network
 
+Coming soon.
 
 
