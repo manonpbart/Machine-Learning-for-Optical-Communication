@@ -79,7 +79,7 @@ In summary, this repository lets you:
 
 To use both the beam generator and the denoising machine learning model, you will need to run:
 
-          pip install git+https://github.com/manonpbart/Machine-Learning-for-Optical-Communication.git#subdirectory=beam_project)
+          pip install git+https://github.com/manonpbart/Machine-Learning-for-Optical-Communication.git#subdirectory=beam_project
           import beam_simulation as bs
 
 ### Generation of optical spatial modes
@@ -124,7 +124,7 @@ Beyond just singular modes, this packages allows you to generate data sets conta
 
 #### Dataset creation
 
-For machine learning tasks, large data sets must be created. The data set generation and a full denoising convolutional autoencoder is presented in **beam_project/examples/GenerativeModel.ipynb**
+For machine learning tasks, large data sets must be created. The data set generation and a full denoising convolutional autoencoder is presented in **beam_project/examples/GenerativeModel.ipynb** or **beam_project/examples/SimpleClass.ipynb**
 
 Using the beam simulation package, data sets can be created using 
 
@@ -147,7 +147,7 @@ which can generate different pairs of LG, HG, and IG modes as well as change the
 
 #### Generative convolutional autoencoder
 
-In the GenerativeModel code, there is a denoising convolutional autoencoder which reduces the effects of turbulence on input images. This can be called using:
+In the GenerativeModel code, there is a denoising convolutional autoencoder which reduces the effects of turbulence on input images. The full code can be found under  **beam_project/examples/GenerativeModel.ipynb**.  This can be called using:
 
         autoenc = ConvAutoencoder(
             input_shape=images.shape[1:],
@@ -177,6 +177,6 @@ Outputs of the denoising CAE and the input images are shown here:
 
 #### Classifying convolutional neural network
 
-Coming soon.
+The data set generation and classification project is presented in **beam_project/examples/SimpleClass.ipynb**.
 
 
