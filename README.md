@@ -152,11 +152,11 @@ In the GenerativeModel code, there is a denoising convolutional autoencoder whic
         autoenc = ConvAutoencoder(
             input_shape=images.shape[1:],
             latent_dim=64, #size of latent vector
-            conv_filters=[32, 16, 8], #determines filter sizw and number of filters
-            use_batchnorm=True, #batch normalization helps with normalizing during training
+            conv_filters=[32, 16, 8], #determines filter size and number of filters
+            use_batchnorm=True, #batch normalization toggle
             use_pool=True,
             pool_size = 2,
-            pool_where = [0], #pool where determines where to add a pooling layer
+            pool_where = [0], #this determines the location to add a pooling layer
             decoder_activation='linear'
         )
         
